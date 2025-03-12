@@ -2,7 +2,6 @@
 import { useState, FormEvent } from 'react';
 import { supabase } from '../../../lib/supabaseClient';
 import { useRouter } from 'next/navigation';
-import Link from "next/link";
 
 export default function SignIn() {
   const [email, setEmail] = useState<string>('');
@@ -15,7 +14,7 @@ export default function SignIn() {
     e.preventDefault();
     setError(null);
     setMessage('');
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
     });

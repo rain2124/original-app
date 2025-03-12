@@ -3,20 +3,11 @@ import { useContext, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import LogoutButton from "@/app/components/LogoutButton";
-import AuthProvider, { AuthContext } from "../contexts/AuthContext";
-// import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-// import { cookies } from 'next/headers';
+import { AuthContext } from "../contexts/AuthContext";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const { session } = useContext(AuthContext);
-
-  // useclient使ってるとだめ
-  // const supabase = createServerComponentClient({ cookies });
-  // const {
-  //   data: { session },
-  // } = await supabase.auth.getSession();
-
   return (
     <nav className="bg-blue-600 p-4">
       <div className="container mx-auto flex justify-between items-center">
