@@ -45,7 +45,7 @@ export default function HomePage() {
       }
     };
     fetchNews();
-  }, [API_URL]);
+  }, [API_URL,error]);
 
   if (loading) return <p className='text-center mt-10'>読み込み中...</p>;
 
